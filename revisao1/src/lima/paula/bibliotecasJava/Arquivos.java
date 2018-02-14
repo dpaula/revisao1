@@ -21,21 +21,25 @@ public class Arquivos {
 		// Arquivos - File
 		InputStream leBytes = new FileInputStream("leitura.txt"); // InputStream le bytes
 		InputStreamReader leCaracteres = new InputStreamReader(leBytes); // transforma bytes em caracteres
-		try (BufferedReader linhaBuffer = new BufferedReader(leCaracteres);) { // cria um buffer com uma linha dos caracteres
+		try (BufferedReader linhaBuffer = new BufferedReader(leCaracteres);) { // cria um buffer com uma linha dos
+																				// caracteres
 
-			
 			// Escrita de arquivos
-			OutputStream escreveBytes = new FileOutputStream("saida.txt"); // OutputStream escreve Bytes, transformando caracteres em bytes
+			OutputStream escreveBytes = new FileOutputStream("saida.txt"); // OutputStream escreve Bytes, transformando
+																			// caracteres em bytes
 			OutputStreamWriter escreveCaracteres = new OutputStreamWriter(escreveBytes); // escreve caracteres
-			BufferedWriter linhaBufferEscrita = new BufferedWriter(escreveCaracteres); //cria um buffer com uma linha dos caracteres escritos
-			
-			String linha = linhaBuffer.readLine(); // retorna a linha de texto posicionada
+			try (BufferedWriter linhaBufferEscrita = new BufferedWriter(escreveCaracteres);) { // cria um buffer com uma
+																								// linha dos caracteres
+																								// escritos
 
-			while (linha != null) {
-				System.out.println(linha);
-				linha = linhaBuffer.readLine();
+				String linha = linhaBuffer.readLine(); // retorna a linha de texto posicionada
+
+				while (linha != null) {
+					linhaBufferEscrita.append(linha);
+					linhaBufferEscrita.newLine();
+					linha = linhaBuffer.readLine();
+				}
 			}
-
 		}
 	}
 
