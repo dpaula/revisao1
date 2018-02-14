@@ -1,2 +1,0 @@
-Estou lendo o arquivo
-lendo várias linhas..

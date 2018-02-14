@@ -25,7 +25,7 @@ public class Arquivos {
 																				// caracteres
 
 			// Escrita de arquivos
-			OutputStream escreveBytes = System.out;//new FileOutputStream("saida.txt"); // OutputStream escreve Bytes, transformando
+			OutputStream escreveBytes = new FileOutputStream("saida.txt"); // OutputStream escreve Bytes, transformando
 																			// caracteres em bytes
 			OutputStreamWriter escreveCaracteres = new OutputStreamWriter(escreveBytes); // escreve caracteres
 			try (BufferedWriter linhaBufferEscrita = new BufferedWriter(escreveCaracteres);) { // cria um buffer com uma
