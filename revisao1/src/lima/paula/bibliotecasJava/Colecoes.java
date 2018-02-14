@@ -43,11 +43,16 @@ public class Colecoes {
 		contas.add(c2);
 		contas.add(c3);
 		
+		System.out.println();
+		System.out.println("contas ordenadas");
 		Collections.sort(contas);
 		
 		for (Conta conta : contas) {
 			System.out.println(conta);
 		}
+		
+		System.out.println("lambda");
+		contas.forEach(conta -> System.out.println(conta.toString()));
 		
 	}
 

@@ -2,16 +2,16 @@ package lima.paula.bibliotecasJava;
 
 public class Conta implements Comparable<Conta> {
 
-	private int saldo;
+	private Integer saldo;
 
-	public Conta(int saldo) {
+	public Conta(Integer saldo) {
 		this.setSaldo(saldo);
 	}
 
 	/**
 	 * @return the saldo
 	 */
-	public int getSaldo() {
+	public Integer getSaldo() {
 		return saldo;
 	}
 
@@ -19,19 +19,13 @@ public class Conta implements Comparable<Conta> {
 	 * @param saldo
 	 *            the saldo to set
 	 */
-	public void setSaldo(int saldo) {
+	public void setSaldo(Integer saldo) {
 		this.saldo = saldo;
 	}
 
 	@Override
 	public int compareTo(Conta conta) {
-		if (this.saldo < conta.getSaldo()) {
-			return -1;
-		} else if (this.saldo > conta.getSaldo()) {
-			return 1;
-		}
-
-		return 0;
+		return this.saldo.compareTo(conta.saldo);
 	}
 
 	/* (non-Javadoc)
