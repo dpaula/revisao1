@@ -39,6 +39,11 @@ public class ColecoesHashSet {
 		contas2.add(c1);
 		contas2.add(c3);
 		
+		
+		System.out.println();
+		System.out.println(contas2.stream().filter(conta -> conta.getSaldo() > 400).findFirst());
+		System.out.println();
+		
 		for(Conta conta : contas2) {
 			System.out.println(conta.toString());
 		}
